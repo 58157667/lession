@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>太紅株式会社</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family: "Yu Gothic", sans-serif;
+      background:#f5f5f5;
+      color:#333;
+      line-height:1.6;
+    }
+
+    header{
+      background:white;
+      padding:20px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    header h1{
+      font-size:28px;
+      color:#003366;
+    }
+
+    nav a{
+      margin-left:25px;
+      text-decoration:none;
+      color:#333;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#0077cc;
+    }
+
+    .hero{
+      height:300px;
+      background:
+      linear-gradient(
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.4)
+      ),
+      url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    .hero-content h2{
+      font-size:48px;
+      margin-bottom:20px;
+    }
+
+    .hero-content p{
+      font-size:20px;
+    }
+
+    section{
+      max-width:1200px;
+      margin:auto;
+      padding:80px 20px;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+      font-size:36px;
+      color:#003366;
+    }
+
+    .about{
+      background:white;
+      border-radius:10px;
+      padding:40px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:
+      repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card img{
+      width:110%;
+      height:520px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:20px;
+    }
+
+    .card-content h3{
+      margin-bottom:10px;
+      color:#003366;
+    }
+
+    .strengths{
+      display:grid;
+      grid-template-columns:
+      repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .strength-box{
+      background:white;
+      padding:30px;
+      border-radius:10px;
+      text-align:center;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .company-table{
+      width:100%;
+      border-collapse:collapse;
+      background:white;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .company-table th,
+    .company-table td{
+      padding:15px;
+      border:1px solid #ddd;
+    }
+
+    .company-table th{
+      background:#003366;
+      color:white;
+      width:30%;
+    }
+
+    .contact{
+      background:white;
+      padding:40px;
+      border-radius:10px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .contact input,
+    .contact textarea{
+      width:100%;
+      padding:15px;
+      margin-top:10px;
+      margin-bottom:20px;
+      border:1px solid #ccc;
+      border-radius:5px;
+    }
+
+    .contact button{
+      background:#003366;
+      color:white;
+      border:none;
+      padding:15px 30px;
+      border-radius:5px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .contact button:hover{
+      background:#0055aa;
+    }
+
+    footer{
+      background:#003366;
+      color:white;
+      text-align:center;
+      padding:30px;
+      margin-top:60px;
+    }
+
+    @media(max-width:768px){
+
+      header{
+        flex-direction:column;
+      }
+
+      nav{
+        margin-top:15px;
+      }
+
+      nav a{
+        margin:0 10px;
+      }
+
+      .hero-content h2{
+        font-size:32px;
+      }
+
+    }
+
+  </style>
+
+</head>
+<body>
+
+<header>
+
+  <h1>太紅株式会社</h1>
+
+  <nav>
+    <a href="#home">ホーム</a>
+    <a href="#company">会社紹介</a>
+    <a href="#order">商品一覧</a>
+	   <a href="#consult">相談サービス</a>
+    <a href="#contact">御連絡</a>
+  </nav>
+
+</header>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h2>日本品質を中国市場へ</h2>
+
+    <p>
+      日本の日用品・文具・キッチン用品・コンサルティングを
+      中国へ輸出販売しております。
+    </p>
+
+  </div>
+
+</section>
+
+<section id="company">
+
+  <h2 class="section-title">会社紹介</h2>
+
+  <div class="about">
+
+    <p>
+      太紅株式会社は2025年3月に日本で設立され、中国総公司の海外事業展開戦略の一環として、日本市場における事業推進および日中ビジネス交流の強化を目的としております。 中国総公司は2015年に設立され、長年にわたり貿易事業、コンサルティングサービス、EC事業、観光関連サービス等の分野において事業を展開し、豊富な業界経験、顧客基盤および運営ノウハウを構築してまいりました。 当社は中国総公司の経営実績と事業資源を基盤とし、日本市場において国際貿易、ビジネスコンサルティング、EC運営、観光関連サービス及びクロスボーダービジネス支援等の事業を展開しております。 「誠実・専門性・効率・共栄」を企業理念とし、日中両市場を結ぶ架け橋として、お客様へ高品質で信頼性の高いサービスの提供を目指しております。 今後は日本国内での事業基盤を強化し、市場開拓、販売チャネル拡大及びブランド構築を推進し、持続的な成長と企業価値向上を目指してまいります
+    </p>
+
+    <br>
+
+    <p>&nbsp;
+     </p>
+
+  </div>
+
+</section>
+
+<section id="order">
+
+  <h2 class="section-title">取扱商品</h2>
+
+  <div class="products">
+
+    <div class="card">
+<img src="太紅株式会社/スクリーンショット 2026-05-18 110652.jpg" width="417" height="819" alt=""/> 
+
+      <div class="card-content">
+
+        <h3>文具用品</h3>
+
+        <p>
+          修正テープ、はさみ、
+          テープのりなど。
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+<img src="太紅株式会社/スクリーンショット 2026-05-18 110729.jpg" width="376" height="420" alt=""/> 
+      <div class="card-content">
+<h3>日用品</h3>
+
+        <p>
+          衛生用品、生活雑貨、
+          オフィス用品など。
+        </p>
+        
+
+      </div>
+
+    </div>
+
+    <div class="card">
+<img src="太紅株式会社/スクリーンショット 2026-05-18 110540.png" width="612" height="248" alt=""/> 
+
+      <div class="card-content">
+<h3>キッチン用品</h3>
+
+        <p>
+          フライパン、鍋、
+          キッチン雑貨など。
+        </p>
+        
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2 class="section-title">当社の強み</h2>
+
+  <div class="strengths">
+
+    <div class="strength-box">
+
+      <h3>日本品質</h3>
+
+      <br>
+
+      <p>
+        高品質で安全性の高い
+        日本製品を提供。
+      </p>
+
+    </div>
+
+    <div class="strength-box">
+
+      <h3>中国販売ネットワーク</h3>
+
+      <br>
+
+      <p>
+        中国国内の販売ルートを
+        活用した営業展開。
+      </p>
+
+    </div>
+
+    <div class="strength-box">
+
+      <h3>法人取引対応</h3>
+
+      <br>
+
+      <p>
+        卸売・法人販売に
+        柔軟対応。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+<section id="consult">
+
+  <h2 class="section-title">
+    コンサルティングサービス
+  </h2>
+
+  <div class="consulting">
+
+    <div class="consult-box">
+
+      <h3>中国市場進出支援</h3>
+
+      <p>
+        中国市場への販売展開、
+        EC販売、代理店開拓を
+        サポートいたします。
+      </p>
+
+    </div>
+
+    <div class="consult-box">
+
+      <h3>輸出入サポート</h3>
+
+      <p>
+        日本商品の輸出手続き、
+        貿易対応、
+        通関業務を支援します。
+      </p>
+
+    </div>
+
+    <div class="consult-box">
+
+      <h3>商品調達支援</h3>
+
+      <p>
+        日本国内メーカー、
+        問屋からの商品調達を
+        サポートいたします。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+<section> <h2 class="section-title">会社概要</h2> <table class="company-table"> <tr> <th>会社名</th> <td>太紅株式会社</td> </tr> <tr> <th>所在地</th> <td>大阪府</td> </tr> <tr> <th>事業内容</th> <td>日用品輸出入・貿易業</td> </tr> <tr> <th>対応地域</th> <td>日本・中国</td> </tr> <tr> <th>取扱商品</th> <td>文具・日用品・キッチン用品・コンサルティング</td> 
+</tr> </table> </section>
+<section id="contact">
+
+  <h2 class="section-title">御連絡</h2>
+
+  <div class="contact">
+
+    <h3>電話</h3>
+    <p>
+      TEL：070-6927-4040
+    </p>
+
+    <br>
+
+    <h3>電子メール</h3>
+    <p>
+      tongyouzhang9@gmail.com
+    </p>
+
+    <br>
+
+
+    <br>
+<img src="太紅株式会社/Weixin Image_20260517192807_14_463.jpg" width="200" height="200" alt=""/><img src="太紅株式会社/スクリーンショット 2026-05-18 112713.jpg" width="200" height="200" alt=""/></div>
+ </section>
+
+<footer>
+
+  © 2026 太紅株式会社 All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
