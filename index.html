@@ -1,464 +1,730 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>太紅株式会社</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>上海容硕楼宇工程服务有限公司</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
   <style>
-
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
+      font-family: "Microsoft YaHei", sans-serif;
     }
 
     body{
-      font-family: "Yu Gothic", sans-serif;
-      background:#f5f5f5;
-      color:#333;
-      line-height:1.6;
+      color:#222;
+      line-height:1.7;
+      background:#f5f7fa;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
     }
 
     header{
-      background:white;
-      padding:20px 60px;
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      z-index:999;
+      background:rgba(0,0,0,0.7);
+      backdrop-filter:blur(6px);
+    }
+
+    nav{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      box-shadow:0 2px 8px rgba(0,0,0,0.05);
-      position:sticky;
-      top:0;
-      z-index:100;
+      padding:18px 0;
     }
 
-    header h1{
-      font-size:28px;
-      color:#003366;
-    }
-
-    nav a{
-      margin-left:25px;
-      text-decoration:none;
-      color:#333;
+    .logo{
+      color:#fff;
+      font-size:24px;
       font-weight:bold;
+    }
+
+    .menu{
+      display:flex;
+      gap:30px;
+    }
+
+    .menu a{
+      color:#fff;
+      font-size:15px;
       transition:0.3s;
     }
 
-    nav a:hover{
-      color:#0077cc;
+    .menu a:hover{
+      color:#00bfff;
     }
 
     .hero{
-      height:300px;
+      height:50vh;
       background:
-      linear-gradient(
-        rgba(0,0,0,0.4),
-        rgba(0,0,0,0.4)
-      ),
-      url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop');
-      background-size:cover;
-      background-position:center;
+      linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+      url('images/banner.jpg') center/cover no-repeat;
       display:flex;
-      justify-content:center;
       align-items:center;
+      color:#fff;
       text-align:center;
-      color:white;
-      padding:20px;
     }
 
-    .hero-content h2{
-      font-size:48px;
+    .hero-content{
+      width:100%;
+    }
+
+    .hero h1{
+      font-size:56px;
       margin-bottom:20px;
     }
 
-    .hero-content p{
-      font-size:20px;
+    .hero p{
+      font-size:22px;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 36px;
+      background:#00bfff;
+      color:#fff;
+      border-radius:50px;
+      margin:10px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#008ecc;
+      transform:translateY(-2px);
     }
 
     section{
-      max-width:1200px;
-      margin:auto;
-      padding:80px 20px;
+      padding:90px 0;
     }
 
     .section-title{
       text-align:center;
-      margin-bottom:50px;
-      font-size:36px;
-      color:#003366;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:40px;
+      color:#0d2b52;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#777;
     }
 
     .about{
-      background:white;
-      border-radius:10px;
-      padding:40px;
-      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
     }
 
-    .products{
+    .about-text h3{
+      font-size:32px;
+      margin-bottom:20px;
+      color:#0d2b52;
+    }
+
+    .about-text p{
+      margin-bottom:18px;
+      color:#555;
+    }
+
+    .stats{
+      margin-top:30px;
       display:grid;
-      grid-template-columns:
-      repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .stat-box{
+      background:#fff;
+      padding:25px;
+      text-align:center;
+      border-radius:15px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .stat-box h4{
+      font-size:32px;
+      color:#00bfff;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:30px;
     }
 
-    .card{
-      background:white;
-      border-radius:10px;
+    .service-card{
+      background:#fff;
+      padding:35px;
+      border-radius:18px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.08);
+      transition:0.3s;
+      text-align:center;
+    }
+
+    .service-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .service-card i{
+      font-size:50px;
+      color:#00bfff;
+      margin-bottom:20px;
+    }
+
+    .service-card h3{
+      margin-bottom:15px;
+      color:#0d2b52;
+    }
+
+    .cases{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+      gap:35px;
+    }
+
+    .case-card{
+      background:#fff;
+      border-radius:20px;
       overflow:hidden;
-      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+      box-shadow:0 8px 25px rgba(0,0,0,0.08);
       transition:0.3s;
     }
 
-    .card:hover{
-      transform:translateY(-5px);
+    .case-card:hover{
+      transform:translateY(-8px);
     }
 
-    .card img{
-      width:110%;
-      height:520px;
-      object-fit:cover;
+    .case-content{
+      padding:25px;
     }
 
-    .card-content{
-      padding:20px;
-    }
-
-    .card-content h3{
+    .case-content h3{
+      color:#0d2b52;
       margin-bottom:10px;
-      color:#003366;
     }
 
-    .strengths{
+    .cert-grid{
       display:grid;
-      grid-template-columns:
-      repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .cert-card{
+      background:#fff;
+      padding:15px;
+      border-radius:15px;
+      box-shadow:0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .tech{
+      background:#0d2b52;
+      color:#fff;
+    }
+
+    .tech-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
       gap:30px;
     }
 
-    .strength-box{
-      background:white;
-      padding:30px;
-      border-radius:10px;
-      text-align:center;
-      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    .tech-card{
+      background:#163c6d;
+      border-radius:18px;
+      overflow:hidden;
     }
 
-    .company-table{
-      width:100%;
-      border-collapse:collapse;
-      background:white;
-      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    .tech-card-content{
+      padding:25px;
     }
 
-    .company-table th,
-    .company-table td{
-      padding:15px;
-      border:1px solid #ddd;
+    .feedback{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+      gap:30px;
     }
 
-    .company-table th{
-      background:#003366;
-      color:white;
-      width:30%;
+    .feedback-card{
+      background:#fff;
+      padding:35px;
+      border-radius:18px;
+      box-shadow:0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .feedback-card i{
+      color:#00bfff;
+      font-size:35px;
+      margin-bottom:15px;
     }
 
     .contact{
-      background:white;
-      padding:40px;
-      border-radius:10px;
-      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+      background:#0d2b52;
+      color:#fff;
     }
 
-    .contact input,
-    .contact textarea{
-      width:100%;
-      padding:15px;
-      margin-top:10px;
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:40px;
+      margin-top:50px;
+    }
+
+    .contact-item{
+      text-align:center;
+    }
+
+    .contact-item i{
+      font-size:40px;
       margin-bottom:20px;
-      border:1px solid #ccc;
-      border-radius:5px;
-    }
-
-    .contact button{
-      background:#003366;
-      color:white;
-      border:none;
-      padding:15px 30px;
-      border-radius:5px;
-      cursor:pointer;
-      transition:0.3s;
-    }
-
-    .contact button:hover{
-      background:#0055aa;
+      color:#00bfff;
     }
 
     footer{
-      background:#003366;
-      color:white;
+      background:#07162b;
+      color:#aaa;
       text-align:center;
-      padding:30px;
-      margin-top:60px;
+      padding:25px;
     }
 
-    @media(max-width:768px){
+    @media(max-width:900px){
 
-      header{
-        flex-direction:column;
+      .about{
+        grid-template-columns:1fr;
       }
 
-      nav{
-        margin-top:15px;
+      .hero h1{
+        font-size:38px;
       }
 
-      nav a{
-        margin:0 10px;
+      .hero p{
+        font-size:18px;
       }
 
-      .hero-content h2{
-        font-size:32px;
+      .menu{
+        display:none;
       }
-
     }
 
   </style>
-
 </head>
 <body>
 
 <header>
+  <div class="container">
+    <nav>
+      <div class="logo">容硕 RONGSHUO</div>
 
-  <h1>太紅株式会社</h1>
-
-  <nav>
-    <a href="#home">ホーム</a>
-    <a href="#company">会社紹介</a>
-    <a href="#order">商品一覧</a>
-	   <a href="#consult">相談サービス</a>
-    <a href="#contact">御連絡</a>
-  </nav>
-
+      <div class="menu">
+        <a href="#about">关于我们</a>
+        <a href="#services">服务内容</a>
+        <a href="#cases">成功案例</a>
+        <a href="#cert">荣誉资质</a>
+        <a href="#contact">联系我们</a>
+      </div>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
-
-  <div class="hero-content">
-
-    <h2>日本品質を中国市場へ</h2>
+  <div class="container hero-content">
+    <h1>定义清洁的新标准</h1>
 
     <p>
-      日本の日用品・文具・キッチン用品・コンサルティングを
-      中国へ輸出販売しております。
+      专业 · 高效 · 环保<br>
+      5A写字楼与商业综合体环境服务专家
     </p>
 
+    <a href="#contact" class="btn">免费现场勘查</a>
+    <a href="#cases" class="btn">查看成功案例</a>
   </div>
-
 </section>
 
-<section id="company">
+<section id="about">
+  <div class="container">
 
-  <h2 class="section-title">会社紹介</h2>
+    <div class="section-title">
+      <h2>关于容硕</h2>
+      <p>十六载深耕，铸就环境服务典范</p>
+    </div>
 
-  <div class="about">
+    <div class="about">
 
-    <p>
-      太紅株式会社は2025年3月に日本で設立され、中国総公司の海外事業展開戦略の一環として、日本市場における事業推進および日中ビジネス交流の強化を目的としております。 中国総公司は2015年に設立され、長年にわたり貿易事業、コンサルティングサービス、EC事業、観光関連サービス等の分野において事業を展開し、豊富な業界経験、顧客基盤および運営ノウハウを構築してまいりました。 当社は中国総公司の経営実績と事業資源を基盤とし、日本市場において国際貿易、ビジネスコンサルティング、EC運営、観光関連サービス及びクロスボーダービジネス支援等の事業を展開しております。 「誠実・専門性・効率・共栄」を企業理念とし、日中両市場を結ぶ架け橋として、お客様へ高品質で信頼性の高いサービスの提供を目指しております。 今後は日本国内での事業基盤を強化し、市場開拓、販売チャネル拡大及びブランド構築を推進し、持続的な成長と企業価値向上を目指してまいります
-    </p>
+      <div>
+        <img src="about.jpg" alt="">
+      </div>
 
-    <br>
+      <div class="about-text">
 
-    <p>&nbsp;
-     </p>
+        <h3>专业、高效、值得信赖</h3>
+
+        <p>
+          上海容硕楼宇工程服务有限公司成立于2010年，
+          专注于5A甲级写字楼、科技园区、商业综合体、
+          酒店式公寓等物业环境服务。
+        </p>
+
+        <p>
+          公司深度整合保洁、保绿、维修、客服等物业服务，
+          提供覆盖设施设备全生命周期的精细化管理。
+        </p>
+
+        <p>
+          我们不仅仅是后勤保障，更是深度参与资产价值创造、
+          企业形象提升与运营效率优化的专业服务企业。
+        </p>
+
+        <div class="stats">
+
+          <div class="stat-box">
+            <h4>16+</h4>
+            <p>行业经验</p>
+          </div>
+
+          <div class="stat-box">
+            <h4>2000万</h4>
+            <p>注册资本</p>
+          </div>
+
+          <div class="stat-box">
+            <h4>100+</h4>
+            <p>服务项目</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
-
 </section>
 
-<section id="order">
+<section id="services">
+  <div class="container">
 
-  <h2 class="section-title">取扱商品</h2>
-
-  <div class="products">
-
-    <div class="card">
-<img src="太紅株式会社/スクリーンショット 2026-05-18 110652.jpg" width="417" height="819" alt=""/> 
-
-      <div class="card-content">
-
-        <h3>文具用品</h3>
-
-        <p>
-          修正テープ、はさみ、
-          テープのりなど。
-        </p>
-
-      </div>
-
+    <div class="section-title">
+      <h2>服务内容</h2>
+      <p>一站式物业环境解决方案</p>
     </div>
 
-    <div class="card">
-<img src="太紅株式会社/スクリーンショット 2026-05-18 110729.jpg" width="376" height="420" alt=""/> 
-      <div class="card-content">
-<h3>日用品</h3>
+    <div class="services-grid">
 
-        <p>
-          衛生用品、生活雑貨、
-          オフィス用品など。
-        </p>
-        
-
+      <div class="service-card">
+        <i class="fa-solid fa-building"></i>
+        <h3>日常保洁</h3>
+        <p>写字楼、园区、商场、住宅等日常保洁服务。</p>
       </div>
 
-    </div>
+      <div class="service-card">
+        <i class="fa-solid fa-arrow-up-right-dots"></i>
+        <h3>外墙清洗</h3>
+        <p>高空幕墙清洗、玻璃清洁、外立面维护。</p>
+      </div>
 
-    <div class="card">
-<img src="太紅株式会社/スクリーンショット 2026-05-18 110540.png" width="612" height="248" alt=""/> 
+      <div class="service-card">
+        <i class="fa-solid fa-gem"></i>
+        <h3>石材养护</h3>
+        <p>石材翻新、晶面养护、地坪修复服务。</p>
+      </div>
 
-      <div class="card-content">
-<h3>キッチン用品</h3>
+      <div class="service-card">
+        <i class="fa-solid fa-tree"></i>
+        <h3>绿化养护</h3>
+        <p>园林景观设计、绿植养护、桌摆租赁。</p>
+      </div>
 
-        <p>
-          フライパン、鍋、
-          キッチン雑貨など。
-        </p>
-        
+      <div class="service-card">
+        <i class="fa-solid fa-fire"></i>
+        <h3>油烟管道清洗</h3>
+        <p>专业餐饮油烟系统清洗与维护服务。</p>
+      </div>
 
+      <div class="service-card">
+        <i class="fa-solid fa-fan"></i>
+        <h3>空调管道清洗</h3>
+        <p>中央空调风管深度清洁与消毒。</p>
       </div>
 
     </div>
 
   </div>
+</section>
 
+<section id="cases">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>成功案例</h2>
+      <p>长期服务众多知名企业与物业项目</p>
+    </div>
+
+    <div class="cases">
+
+      <div class="case-card">
+        <img src="images/case1.jpg" alt="">
+        <div class="case-content">
+          <h3>上海市总工会项目</h3>
+          <p>
+            提供外墙清洗、日常保洁、高空作业、
+            大型活动保障等专业服务。
+          </p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <img src="images/case2.jpg" alt="">
+        <div class="case-content">
+          <h3>陆家嘴物业项目</h3>
+          <p>
+            提供写字楼日常保洁、
+            石材养护与外墙幕墙清洗服务。
+          </p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <img src="images/case3.jpg" alt="">
+        <div class="case-content">
+          <h3>汤臣君品高级住宅</h3>
+          <p>
+            高端住宅物业保洁、
+            精细化环境维护服务。
+          </p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <img src="images/case4.jpg" alt="">
+        <div class="case-content">
+          <h3>华润物业静安项目</h3>
+          <p>
+            商业综合体保洁、
+            石材翻新及巡检维护。
+          </p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <img src="images/case5.jpg" alt="">
+        <div class="case-content">
+          <h3>国家会展中心项目</h3>
+          <p>
+            大型场馆外立面清洗、
+            高空施工与快速交付。
+          </p>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <img src="images/case6.jpg" alt="">
+        <div class="case-content">
+          <h3>仲量联行物业项目</h3>
+          <p>
+            希尔顿总部维保巡检、
+            商业物业综合环境服务。
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="cert">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>荣誉资质</h2>
+      <p>专业认证，实力保障</p>
+    </div>
+
+    <div class="cert-grid">
+
+      <div class="cert-card">
+        <img src="images/cert1.jpg">
+      </div>
+
+      <div class="cert-card">
+        <img src="images/cert2.jpg">
+      </div>
+
+      <div class="cert-card">
+        <img src="images/cert3.jpg">
+      </div>
+
+      <div class="cert-card">
+        <img src="images/cert4.jpg">
+      </div>
+
+      <div class="cert-card">
+        <img src="images/cert5.jpg">
+      </div>
+
+      
+
+    </div>
+
+  </div>
+</section>
+
+<section class="tech">
+  <div class="container">
+
+    <div class="section-title">
+      <h2 style="color:white;">智能科技清洁</h2>
+      <p style="color:#cfd9e6;">
+        科技赋能现代物业环境管理
+      </p>
+    </div>
+
+    <div class="tech-grid">
+
+      <div class="tech-card">
+        <img src="images/robot1.jpg">
+        <div class="tech-card-content">
+          <h3>智能洗地机器人</h3>
+          <p>
+            AI路径规划，自主清洁，
+            提高清洁效率与覆盖率。
+          </p>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <img src="images/robot2.jpg">
+        <div class="tech-card-content">
+          <h3>石材养护机器人</h3>
+          <p>
+            智能晶面养护，
+            更均匀、更透亮、更高效。
+          </p>
+        </div>
+      </div>
+
+      <div class="tech-card">
+        <img src="images/robot3.jpg">
+        <div class="tech-card-content">
+          <h3>高空作业系统</h3>
+          <p>
+            快、净、安、省，
+            高效完成大型外立面清洗。
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
 <section>
+  <div class="container">
 
-  <h2 class="section-title">当社の強み</h2>
+    <div class="section-title">
+      <h2>客户评价</h2>
+      <p>口碑，是我们最好的名片</p>
+    </div>
 
-  <div class="strengths">
+    <div class="feedback">
 
-    <div class="strength-box">
+      <div class="feedback-card">
+        <i class="fa-solid fa-quote-left"></i>
 
-      <h3>日本品質</h3>
+        <p>
+          合作多年，容硕服务团队始终专业可靠。
+          响应迅速，工作细致，在大型活动保障中
+          展现了极强的专业能力。
+        </p>
 
-      <br>
+        <br>
 
-      <p>
-        高品質で安全性の高い
-        日本製品を提供。
-      </p>
+        <strong>—— 云飞大厦物业主管</strong>
+      </div>
+
+      <div class="feedback-card">
+        <i class="fa-solid fa-quote-left"></i>
+
+        <p>
+          容硕保洁员专业度很高，工具和清洁剂品质优秀。
+          虽然价格不是最低，但服务体验绝对物超所值。
+        </p>
+
+        <br>
+
+        <strong>—— 商业物业业主</strong>
+      </div>
 
     </div>
 
-    <div class="strength-box">
+  </div>
+</section>
 
-      <h3>中国販売ネットワーク</h3>
+<section class="contact" id="contact">
 
-      <br>
+  <div class="container">
 
-      <p>
-        中国国内の販売ルートを
-        活用した営業展開。
+    <div class="section-title">
+      <h2 style="color:white;">联系我们</h2>
+      <p style="color:#cfd9e6;">
+        立即开启您的洁净之旅
       </p>
-
     </div>
 
-    <div class="strength-box">
+    <div class="contact-grid">
 
-      <h3>法人取引対応</h3>
+      <div class="contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <h3>服务热线</h3>
+        <p>13524834483</p>
+      </div>
 
-      <br>
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <h3>电子邮箱</h3>
+        <p>jackysun@rongshuolouyu.com</p>
+      </div>
 
-      <p>
-        卸売・法人販売に
-        柔軟対応。
-      </p>
+      <div class="contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <h3>公司地址</h3>
+        <p>上海市杨浦区国定路335号2号楼1503室</p>
+      </div>
 
     </div>
 
   </div>
 
 </section>
-<section id="consult">
-
-  <h2 class="section-title">
-    コンサルティングサービス
-  </h2>
-
-  <div class="consulting">
-
-    <div class="consult-box">
-
-      <h3>中国市場進出支援</h3>
-
-      <p>
-        中国市場への販売展開、
-        EC販売、代理店開拓を
-        サポートいたします。
-      </p>
-
-    </div>
-
-    <div class="consult-box">
-
-      <h3>輸出入サポート</h3>
-
-      <p>
-        日本商品の輸出手続き、
-        貿易対応、
-        通関業務を支援します。
-      </p>
-
-    </div>
-
-    <div class="consult-box">
-
-      <h3>商品調達支援</h3>
-
-      <p>
-        日本国内メーカー、
-        問屋からの商品調達を
-        サポートいたします。
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-<section> <h2 class="section-title">会社概要</h2> <table class="company-table"> <tr> <th>会社名</th> <td>太紅株式会社</td> </tr> <tr> <th>所在地</th> <td>大阪府</td> </tr> <tr> <th>事業内容</th> <td>日用品輸出入・貿易業</td> </tr> <tr> <th>対応地域</th> <td>日本・中国</td> </tr> <tr> <th>取扱商品</th> <td>文具・日用品・キッチン用品・コンサルティング</td> 
-</tr> </table> </section>
-<section id="contact">
-
-  <h2 class="section-title">御連絡</h2>
-
-  <div class="contact">
-
-    <h3>電話</h3>
-    <p>
-      TEL：070-6927-4040
-    </p>
-
-    <br>
-
-    <h3>電子メール</h3>
-    <p>
-      tongyouzhang9@gmail.com
-    </p>
-
-    <br>
-
-
-    <br>
-<img src="太紅株式会社/Weixin Image_20260517192807_14_463.jpg" width="200" height="200" alt=""/><img src="太紅株式会社/スクリーンショット 2026-05-18 112713.jpg" width="200" height="200" alt=""/></div>
- </section>
 
 <footer>
-
-  © 2026 太紅株式会社 All Rights Reserved.
-
+  © 2026 上海容硕楼宇工程服务有限公司 版权所有
 </footer>
 
 </body>
